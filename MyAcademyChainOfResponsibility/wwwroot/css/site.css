@@ -1,18 +1,119 @@
+/* Banking Theme Colors */
+:root {
+    --primary-blue: #003366;
+    --accent-gold: #eda914;
+    --bg-light: #f4f7f6;
+    --text-dark: #333333;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper for main content to push footer down */
+body>.container-fluid {
+    flex: 1;
+    padding-bottom: 3rem;
+}
+
+/* Navbar Customization */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+}
+
+.navbar-brand {
+    font-family: 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.brand-text-primary {
+    color: var(--primary-blue);
+    margin-right: 5px;
+}
+
+.brand-text-accent {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+/* Hero Section */
+.bank-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+    color: white;
+    padding: 6rem 0 8rem 0;
+    /* Extra bottom padding for overlap */
+    margin-bottom: -4rem;
+    /* Negative margin for overlap effect */
+}
+
+/* Form Card */
+.card-bank {
+    background: white;
+    border: none;
+    border-top: 5px solid var(--accent-gold);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-bank h3 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn-primary-bank {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-bank:hover {
+    background-color: #002244;
+    border-color: #002244;
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 51, 102, 0.25);
+}
+
+/* Footer */
+.footer {
+    background-color: white;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .05);
+    flex-shrink: 0;
+    width: 100%;
 }

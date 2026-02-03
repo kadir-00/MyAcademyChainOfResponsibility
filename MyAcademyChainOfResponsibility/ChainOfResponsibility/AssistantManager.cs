@@ -21,7 +21,7 @@ namespace MyAcademyChainOfResponsibility.ChainOfResponsibility
                 {
                     Name = request.Name,
                     Price = request.Price,
-                    EmployeeName = "Melike Yıldırım - Müdür Yardımcısı",
+                    EmployeeName = "Dwight Schrute - Müdür Yardımcısı",
                     Description = "Para Çekme İşlemi Başarı ile Gerçekleştirilmiştir, Müşteriye Para Ödenmesi Yapılmıştır."
                 };
 
@@ -34,7 +34,7 @@ namespace MyAcademyChainOfResponsibility.ChainOfResponsibility
                 {
                     Name = request.Name,
                     Price = request.Price,
-                    EmployeeName = "Melike Yıldırım - Müdür Yardımcısı",
+                    EmployeeName = "Dwight Schrute - Müdür Yardımcısı",
                     Description = "Para Çekme İşlemi Başarısız Olmuştur, Müşteri Bankamızın Müdürüne Yönlendirildi."
                 };
                 _context.Add(customerProcess);

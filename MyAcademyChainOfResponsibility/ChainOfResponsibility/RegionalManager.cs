@@ -22,7 +22,7 @@ namespace MyAcademyChainOfResponsibility.ChainOfResponsibility
                 {
                     Name = request.Name,
                     Price = request.Price,
-                    EmployeeName = "Mert Arslanoğlu - Bölge Müdürü",
+                    EmployeeName = "Serhat Turk - Bölge Müdürü",
                     Description = "Para Çekme İşlemi Başarı ile Gerçekleştirilmiştir, Müşteriye Para Ödenmesi Yapılmıştır."
                 };
 
@@ -35,7 +35,7 @@ namespace MyAcademyChainOfResponsibility.ChainOfResponsibility
                 {
                     Name = request.Name,
                     Price = request.Price,
-                    EmployeeName = "Mert Arslanoğlu - Bölge Müdürü",
+                    EmployeeName = "Serhat Turk - Bölge Müdürü",
                     Description = "Para Çekme İşlemi Başarısız Olmuştur, Müşteriye Ödenecek Para Limiti Aşıldı."
                 };
 

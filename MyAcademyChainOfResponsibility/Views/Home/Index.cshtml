@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model CustomerProcessViewModel
+@{
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="bank-hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Geleceğin Bankacılığına Hoş Geldiniz</h1>
+        <p class="lead">Hızlı, Güvenli ve Zincirleme Onay Sistemi ile İşlemleriniz Kontrol Altında.</p>
+    </div>
+</div>
+
+<div class="container mt-n5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-bank p-4 mb-5">
+                <div class="card-body">
+                    <h3 class="text-center">Para Çekme İşlemi</h3>
+                    <p class="text-center text-muted mb-4">Lütfen çekmek istediğiniz tutarı ve bilgilerinizi giriniz.
+                    </p>
+
+                    <form method="post" asp-controller="Default" asp-action="Index">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Müşteri Adı Soyadı</label>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Örn: Ahmet Yılmaz"
+                                required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Çekilecek Tutar (TL)</label>
+                            <input type="text" asp-for="Price" class="form-control" placeholder="0.00" required />
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary-bank btn-lg">Parayı Çek</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small class="text-muted">
+                    <i class="bi bi-shield-lock-fill"></i> İşlemleriniz 256-bit SSL şifreleme ile korunmaktadır.
+                </small>
+            </div>
+        </div>
+    </div>
 </div>
