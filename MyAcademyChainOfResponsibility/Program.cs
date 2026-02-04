@@ -17,6 +17,8 @@ builder.Services.AddDbContext<CoFContext>(options =>
 });
 
 
+
+builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
@@ -31,6 +33,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

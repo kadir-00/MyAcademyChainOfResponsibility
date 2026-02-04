@@ -15,28 +15,33 @@ namespace MyAcademyChainOfResponsibility.ChainOfResponsibility
 
         public override void Process(CustomerProcessViewModel request)
         {
-            if(request.Price <= 50000)
+            if (request.Price <= 50000)
             {
                 var customerProcess = new CustomerProcess
                 {
                     Name = request.Name,
                     Price = request.Price,
                     EmployeeName = "Kadir Uzun - Gişe Memuru",
-                    Description = "Para Çekme İşlemi Başarı ile Gerçekleştirilmiştir, Müşteriye Para Ödenmesi Yapılmıştır."
+                    Description = "Para Çekme İşlemi Veznedar Tarafından Gerçekleştirildi."
                 };
+                request.EmployeeName = customerProcess.EmployeeName;
+                request.Description = customerProcess.Description;
 
                 _context.Add(customerProcess);
                 _context.SaveChanges();
             }
-            else if(NextApprover != null)
+            else if (NextApprover != null)
             {
                 var customerProcess = new CustomerProcess
                 {
-                    Name = request.Name, 
+                    Name = request.Name,
                     Price = request.Price,
                     EmployeeName = "Kadir Uzun - Gişe Memuru",
                     Description = "Para Çekme İşlemi Başarısız Olmuştur, Müşteri Bankamızın Müdür Yardımcısına Yönlendirildi."
                 };
+                request.EmployeeName = customerProcess.EmployeeName;
+                request.Description = customerProcess.Description;
+
                 _context.Add(customerProcess);
                 _context.SaveChanges();
 

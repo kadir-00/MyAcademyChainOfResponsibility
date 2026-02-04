@@ -1,0 +1,57 @@
+@model MyAcademyChainOfResponsibility.DataAccess.Entities.AppUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giriş Yap - Chain Of Responsibility Bankası</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body class="bg-login">
+
+    <div class="card card-bank p-5" style="width: 400px; max-width: 90%;">
+        <div class="text-center mb-4">
+            <h2 class="navbar-brand justify-content-center" style="font-size: 1.2rem;">
+                <span class="brand-text-primary">Chain Of</span> <span class="brand-text-accent">RESPONSIBILITY</span>
+            </h2>
+            <p class="text-muted mt-2">Güvenli Bankacılık Portalı</p>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center">@ViewBag.Error</div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label text-muted small fw-bold">ADINIZ</label>
+                <input type="text" asp-for="Username" class="form-control" required placeholder="Kullanıcı Adınız" />
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label text-muted small fw-bold">ŞİFRE</label>
+                <input type="password" asp-for="Password" class="form-control" required placeholder="••••••" />
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary-bank btn-lg">Giriş Yap</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-4">
+            <small class="text-muted" style="font-size: 0.75rem;">
+                &copy; 2026 Chain of Responsibility Bankası
+            </small>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -15,7 +15,13 @@ namespace MyAcademyChainOfResponsibility.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var userFullname = HttpContext.Session.GetString("UserFullname");
+            var model = new CustomerProcessViewModel();
+            if (!string.IsNullOrEmpty(userFullname))
+            {
+                model.Name = userFullname;
+            }
+            return View(model);
         }
 
         public IActionResult Privacy()

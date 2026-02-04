@@ -20,7 +20,7 @@ namespace MyAcademyChainOfResponsibility.Controllers
         }
 
         [HttpGet]
-        public IActionResult 
+        public IActionResult
             Index()
         {
             return View();
@@ -35,7 +35,19 @@ namespace MyAcademyChainOfResponsibility.Controllers
             _manager.SetNextApprover(_regionalManager);
 
             _clerk.Process(model);
-            return NoContent();
+
+            if (model.Description != null && model.Description.Contains("Gerçekleştirildi"))
+            {
+                TempData["Icon"] = "success";
+                TempData["Message"] = model.Description;
+            }
+            else
+            {
+                TempData["Icon"] = "error";
+                TempData["Message"] = model.Description ?? "İşlem gerçekleştirilemedi.";
+            }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -45,3 +45,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    @if (TempData["Message"] != null)
+
+    {
+        <text>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        title: 'İşlem Sonucu',
+                        text: '@Html.Raw(TempData["Message"])',
+                        icon: '@TempData["Icon"]',
+                        confirmButtonText: 'Tamam',
+                        confirmButtonColor: '#003366'
+                    });
+            });
+        </text>
+    }
+</script>
